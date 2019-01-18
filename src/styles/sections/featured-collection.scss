@@ -4,6 +4,55 @@
  * Base styling for the featured collection product grid.
  *
  */
-.featured-collection {
-    
+
+a{
+    text-decoration: none;
+}
+
+.collection_description{
+    padding: 0px 25vw;
+    text-align: center;
+    color: #9B9B9B;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+    text-align: center;
+    margin-bottom: 5vw;
+}
+.product_title{
+    color: #003366;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: left;
+}
+.product_price{
+    color: #9B9B9B;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+}
+.product_description{
+    margin-bottom: 4vw;
+    width: 70%;
+}
+.featured_product{
+    margin-right: 40px;
+}
+#collection_title{
+    color: #003366 !important;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 49px;
+}
+#featured_product_container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 6vw;
+}
+
+// Disabling the admin "you're previewing ...." bar
+
+#preview-bar-iframe{
+    display: none !important;
 }

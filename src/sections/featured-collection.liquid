@@ -9,31 +9,37 @@
 <section class="featured-collection" data-section-id="{{ section.id }}" data-section-type="featured-collection">
   {%- assign collection = collections[section.settings.collection] -%}
 
-  <h2>{{ collection.title | escape }}</h2>
-
+<div class="collection_description">
+  <h2 id="collection_title">{{ collection.title | escape }}</h2>
   <p>{{ collection.description }}</p>
+</div>
 
+<div id="featured_product_container">
   {% for product in collection.products limit: 6 %}
     {% assign current_variant = product.selected_or_first_available_variant %}
   
+  <div class="featured_product">
     <a href="{{ product.url | within: collection }}">
-      <div>
+      <div class="product_image">
         {% if product.featured_image != blank %}
           {{ product.featured_image | img_url: 'large' | img_tag }}
         {% endif %}
-        
-        <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
       </div>
 
-      <div>
-        <p>{{ product.title | escape }}</p>
+      <div class="product_description">
 
-        <span>
+        <span class="add_to_cart_button" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+
+        <p class="product_title">{{ product.title | escape }}</p>
+
+        <span class="product_price">
           {% include 'product-price' %}
         </span>
       </div>
     </a>
+    </div>
   {% endfor %}
+  </div>
 </section>
 
 {% schema %}
