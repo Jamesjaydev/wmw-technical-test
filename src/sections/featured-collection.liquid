@@ -24,13 +24,12 @@
         {% if product.featured_image != blank %}
           {{ product.featured_image | img_url: 'large' | img_tag: product.title, 'product_image' }}
         {% endif %}
-      </div>
-
-      <div class="product_description">
-
         <div class="add_to_cart_button">
         <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
         </div>
+      </div>
+
+      <div class="product_description">
         <p class="product_title">{{ product.title | escape }}</p>
 
         <span class="product_price">

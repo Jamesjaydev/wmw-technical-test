@@ -64,7 +64,15 @@ a{
     top: -80px;
     left: 1.36vw;
     z-index: 12;
-    display: none;
+    visibility: hidden;
+}
+
+// Show add to cart button on hover
+.product_image:hover + .add_to_cart_button{
+    visibility: visible;
+}
+.add_to_cart_button:hover{
+    visibility: visible;
 }
 
 // Disabling the admin "you're previewing ...." bar
@@ -97,5 +105,8 @@ a{
     .featured_product{
         width: 40%;
         margin-left: 0px;
+    }
+    .add_to_cart_button{
+        left: 2.36vw;
     }
 }
