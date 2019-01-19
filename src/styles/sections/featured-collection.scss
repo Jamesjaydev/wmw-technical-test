@@ -66,15 +66,18 @@ a{
     top: -80px;
     left: 1.36vw;
     z-index: 12;
-    visibility: hidden;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in;
 }
 
 // Show add to cart button on hover
 .product_image:hover + .add_to_cart_button{
-    visibility: visible;
+    opacity: 1;
 }
 .add_to_cart_button:hover{
-    visibility: visible;
+    opacity: 1;
 }
 
 // Disabling the admin "you're previewing ...." bar
