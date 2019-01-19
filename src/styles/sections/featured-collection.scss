@@ -10,7 +10,8 @@ a{
 }
 
 .collection_description{
-    padding: 0px 25vw;
+    margin: 0px auto 5vw auto;
+    width: 611px;
     text-align: center;
     color: #9B9B9B;
     font-size: 18px;
@@ -19,12 +20,19 @@ a{
     text-align: center;
     margin-bottom: 5vw;
 }
+#collection_title{
+    color: #003366 !important;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 49px;
+}
 .product_title{
     color: #003366;
     font-size: 21px;
     font-weight: bold;
     line-height: 26px;
     text-align: left;
+    margin-bottom: 6px;
 }
 .product_price{
     color: #9B9B9B;
@@ -34,25 +42,60 @@ a{
 }
 .product_description{
     margin-bottom: 4vw;
-    width: 70%;
+    width: 100%;
 }
 .featured_product{
-    margin-right: 40px;
-}
-#collection_title{
-    color: #003366 !important;
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 49px;
+    width: 21%;
+    margin-left: 3vw;
 }
 #featured_product_container{
     display: flex;
     flex-wrap: wrap;
     padding: 0px 6vw;
 }
+.add_to_cart_button{
+    text-align: center;
+    color: #003366;
+    background-color: white;
+    padding: 13px 30px;
+    font-weight: bold;
+    width: 86%;
+    position: relative;
+    top: -80px;
+    left: 1.36vw;
+    z-index: 12;
+    display: none;
+}
 
 // Disabling the admin "you're previewing ...." bar
 
 #preview-bar-iframe{
     display: none !important;
+}
+
+// Meida Queries
+
+@media screen and (max-width: 540px){
+    .collection_description{
+        width: auto;
+    }
+    #featured_product_container{
+        padding: 0px;
+    }
+    .collection_paragraph{
+        padding: 0px 35px;
+    }
+    .collection_description{
+        margin-bottom: 10vw;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #featured_product_container{
+        justify-content: space-evenly;
+    }
+    .featured_product{
+        width: 40%;
+        margin-left: 0px;
+    }
 }

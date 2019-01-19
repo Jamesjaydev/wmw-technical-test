@@ -11,7 +11,7 @@
 
 <div class="collection_description">
   <h2 id="collection_title">{{ collection.title | escape }}</h2>
-  <p>{{ collection.description }}</p>
+  <p class="collection_paragraph">{{ collection.description }}</p>
 </div>
 
 <div id="featured_product_container">
@@ -20,16 +20,17 @@
   
   <div class="featured_product">
     <a href="{{ product.url | within: collection }}">
-      <div class="product_image">
+      <div class="product_image_div">
         {% if product.featured_image != blank %}
-          {{ product.featured_image | img_url: 'large' | img_tag }}
+          {{ product.featured_image | img_url: 'large' | img_tag: product.title, 'product_image' }}
         {% endif %}
       </div>
 
       <div class="product_description">
 
-        <span class="add_to_cart_button" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
-
+        <div class="add_to_cart_button">
+        <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+        </div>
         <p class="product_title">{{ product.title | escape }}</p>
 
         <span class="product_price">
